@@ -1,6 +1,9 @@
 # Java Cheatsheet
 ## Spring 5 tutorial
 https://www.concretepage.com/spring-5/
+
+## Perform CRUD operation from spring java
+You can use `RestTemplate` (syncronous library) or `WebClient` (asyncronous library).
 ## Run a method asyncronously
 Use **CompletableFuture** from concurrent library
 ```java
