@@ -15,3 +15,7 @@ CompletableFuture.runAsync(() -> method());
 ```
 ## Collections
 
+## Java basic
+- primitive types pass by value, Objects are pass by reference
+
+- method overriding, method overloading, subclass, interface, abstract class, data encapsulation, enum,  upper casting, down casting, default method in interface, 
