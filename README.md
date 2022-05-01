@@ -203,6 +203,8 @@ To solve this we can use `?` wildcard. We should use wildcard when we don't know
 **Bounded wildcard `?`**
 
 Now we can bound our wildcard List by extend Animal class to it. This means we can pass list of subclasses that extend Animal class. E.g Dog, Cat class.
+
+- Upper Bound example.
 ```java
 public class Main {
 
@@ -215,12 +217,25 @@ public class Main {
         printList(catList);
     }
 
-    private static void printList(List<? extends Animal> myList) {
+    private static void printList(List<? extends Animal> myList) { // Upper bound is Animal
         System.out.println(myList.size());
     }
 }
 ```
+- Lower Boundary example.
+```java
+    public static void main(String[] args) {
+        // write your code here
+        List<Number> numberList = new ArrayList<>();
+        numberList.add(2);
 
+        printList(numberList);
+    }
+
+    private static void printList(List<? super Double> myList) { // lower bound is Double
+        System.out.println(myList.size());
+    }
+```
 ## Lambda Expression
 Lambda is useful when you want to shorten your code. In order to use lambda we need to define **functional interface**. Functional interface should contains only one method signeture. 
 ```java
@@ -265,3 +280,12 @@ Example of passing lambda function as argument.
         episode.show();
     }
 ```
+Another example.
+```java
+    public static void main(String[] args) {
+        List<Integer> integerList = Arrays.asList(1,2,3,4);
+
+        integerList.forEach(i -> System.out.println(i)); // Here lambda function is the implementation of accept method of Consumer Interface.
+    }
+```
+
