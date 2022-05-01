@@ -220,3 +220,48 @@ public class Main {
     }
 }
 ```
+
+## Lambda Expression
+Lambda is useful when you want to shorten your code. In order to use lambda we need to define **functional interface**. Functional interface should contains only one method signeture. 
+```java
+@FunctionalInterface
+public interface Episode {
+    void show();
+}
+
+```
+Now One way to use the interface method would be to use annonymous innerclass to implement the interface as follow:
+```java
+    public static void main(String[] args) {
+        // write your code here
+        Episode episode = new Episode() { //Annonymous inner class that implements Episode interface.
+            @Override
+            public void show() {
+                System.out.println("Showing the episode!");
+            }
+        };
+
+        episode.show();
+    }
+```
+However using lambda function it is much simpler. 🙂
+
+```java
+    public static void main(String[] args) {
+        // write your code here
+        Episode episode = () -> System.out.println("Showing the episode!");
+
+        episode.show();
+    }
+```
+Example of passing lambda function as argument.
+```java
+    public static void main(String[] args) {
+        // write your code here
+        showEpisode(() -> System.out.println("Showing the episode!"));
+    }
+
+    private static void showEpisode(Episode episode){
+        episode.show();
+    }
+```
