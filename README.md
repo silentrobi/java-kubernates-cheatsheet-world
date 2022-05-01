@@ -138,3 +138,77 @@ public class Main {
     }
 }
 ```
+Generic methid with multiple generic types
+```java
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+        shout("Jhon", "Robi");
+        shout(56, 78.2);
+        shout(new Cat(), new Dog());
+
+    }
+
+    private static <K, V> void shout (K thingToShout, V otherThingToShout ){
+        System.out.println(thingToShout + "!!!");
+        System.out.println(otherThingToShout + "!!!");
+    }
+}
+```
+Wildcard generic type example.
+Following gives compile time error because List<Integer> is not subclass of List<Object> though Integer is subclass of Object.
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        // write your code here
+        List<Integer> integerList = new ArrayList<>();
+
+        integerList.add(3);
+
+        printList(integerList); // It gives compile time error because List<Integer> is not subclass of List<Object> though Integer is subclass of Object. 
+    }
+
+    private static void printList(List<Object> myList) {
+        System.out.println(myList.size());
+    }
+}
+```
+To solve this we can use `?` wildcard. We should use wildcard when we don't know the what the type would be.
+```java
+	public class Main {
+
+    public static void main(String[] args) {
+        // write your code here
+        List<Integer> integerList = new ArrayList<>();
+
+        integerList.add(3);
+
+        printList(integerList);
+    }
+
+    private static void printList(List<?> myList) {
+        System.out.println(myList.size());
+    }
+}
+
+Bounded wildcard `?`
+Now we can bound our wildcard List by extend Animal class to it. This means we can pass list of subclasses that extend Animal class. E.g Dog, Cat class.
+```java
+public class Main {
+
+    public static void main(String[] args) {
+        // write your code here
+        List<Cat> catList = new ArrayList<>();
+
+        catList.add(new Cat());
+
+        printList(catList);
+    }
+
+    private static void printList(List<? extends Animal> myList) {
+        System.out.println(myList.size());
+    }
+}
+```
