@@ -62,6 +62,26 @@ public class Main {
 ```
 Bounded generic class example. In here `Printer` generic class is bounded by Animal Class.
 ```java
+
+public class Animal {
+    public void print(){
+        System.out.println("animal");
+    }
+}
+public class Cat extends Animal{
+
+    @Override
+    public void print(){
+        System.out.println("cat");
+    }
+}
+public class Dog extends Animal{
+
+    @Override
+    public void print(){
+        System.out.println("dog");
+    }
+}
 /**
  *
  * @param <T> is generic type (Double, Integer, or any Object...)
@@ -94,3 +114,11 @@ public class Main {
     }
 }
 ```
+It is possible to extend Generic Type with Multiple Interfaces but with only one class.
+```java
+    	public class Printer<T extends Serializable> {}
+	public class Printer<T extends Animal & Serializable> {} // Always class come first
+	public class Printer<T extends Class1 & Interface1 & Interface2 > {}
+	
+```
+
