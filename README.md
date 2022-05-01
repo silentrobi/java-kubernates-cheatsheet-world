@@ -26,6 +26,8 @@ https://gist.github.com/psayre23/c30a821239f4818b0709
 
 ## Java Generic
 
+**Simple generic class**
+
 Generic `Printer` class
 ```java
 /**
@@ -60,7 +62,9 @@ public class Main {
     }
 }
 ```
-Bounded generic class example. In here `Printer` generic class is bounded by Animal Class.
+**Bounded generic class**
+
+In here `Printer` generic class is bounded by Animal Class.
 ```java
 
 public class Animal {
@@ -121,7 +125,8 @@ It is possible to extend Generic Type with Multiple Interfaces but with only one
 	public class Printer<T extends Class1 & Interface1 & Interface2 > {}
 	
 ```
-Generic Method example
+**Generic Method**
+
 ```java
 public class Main {
 
@@ -138,7 +143,8 @@ public class Main {
     }
 }
 ```
-Generic methid with multiple generic types
+**Generic methid with multiple generic types**
+
 ```java
 public class Main {
 
@@ -156,7 +162,8 @@ public class Main {
     }
 }
 ```
-Wildcard generic type example.
+**Wildcard(?) generic type example.**
+
 Following gives compile time error because List<Integer> is not subclass of List<Object> though Integer is subclass of Object.
 ```java
 public class Main {
@@ -192,8 +199,9 @@ To solve this we can use `?` wildcard. We should use wildcard when we don't know
         System.out.println(myList.size());
     }
 }
+```
+**Bounded wildcard `?`**
 
-Bounded wildcard `?`
 Now we can bound our wildcard List by extend Animal class to it. This means we can pass list of subclasses that extend Animal class. E.g Dog, Cat class.
 ```java
 public class Main {
