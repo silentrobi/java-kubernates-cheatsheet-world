@@ -121,4 +121,20 @@ It is possible to extend Generic Type with Multiple Interfaces but with only one
 	public class Printer<T extends Class1 & Interface1 & Interface2 > {}
 	
 ```
+Generic Method example
+```java
+public class Main {
 
+    public static void main(String[] args) {
+	// write your code here
+        shout("Jhon");
+        shout(56);
+        shout(new Cat());
+
+    }
+
+    private static <T> void shout (T thingToShout){ // Here <T> is necessary because java needs to know that method T type is a generic type
+        System.out.println(thingToShout + "!!!");
+    }
+}
+```
