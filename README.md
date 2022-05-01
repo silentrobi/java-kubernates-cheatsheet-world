@@ -237,7 +237,7 @@ public class Main {
     }
 ```
 ## Lambda Expression
-Lambda is useful when you want to shorten your code. In order to use lambda we need to define **functional interface**. Functional interface should contains only one method signeture. 
+Lambda is useful when you want to shorten your code. In order to use lambda we need to define **functional interface**. Functional interface should contains only one method signature. 
 ```java
 @FunctionalInterface
 public interface Episode {
