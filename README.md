@@ -22,3 +22,75 @@ CompletableFuture.runAsync(() -> method());
 https://www.javatpoint.com/java-collections-interview-questions#:~:text=The%20differences%20between%20the%20Collection,and%20synchronize%20the%20collection%20elements. 
 
 https://gist.github.com/psayre23/c30a821239f4818b0709
+
+
+## Java Generic
+
+Generic `Printer` class
+```java
+/**
+ *
+ * @param <T> is generic type (Double, Integer, or any Object...)
+ */
+public class Printer<T> {
+
+    private T thingToPrint;
+
+    public Printer(T thingToPrint){
+        this.thingToPrint = thingToPrint;
+    }
+
+    public void print(){
+        System.out.println(thingToPrint);
+    }
+}
+```
+Usage of `Printer` class.
+```java
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+
+        Printer<Integer> printer1 = new Printer<>(23);
+        Printer<Double> printer2 = new Printer<>(23.5);
+
+        printer1.print();
+        printer2.print();
+    }
+}
+```
+Bounded generic class example. In here `Printer` generic class is bounded by Animal Class.
+```java
+/**
+ *
+ * @param <T> is generic type (Double, Integer, or any Object...)
+ */
+public class Printer<T extends Animal> {
+
+    private T thingToPrint;
+
+    public Printer(T thingToPrint){
+        this.thingToPrint = thingToPrint;
+    }
+
+    public void print(){
+        thingToPrint.print();
+    }
+}
+```
+Usage of bounded `Printer` class.
+```java
+public class Main {
+
+    public static void main(String[] args) {
+	// write your code here
+
+        Printer<Dog> printer1 = new Printer<>(new Dog());
+        Printer<Cat> printer2 = new Printer<>(new Cat());
+
+        printer1.print();
+        printer2.print();
+    }
+}
+```
