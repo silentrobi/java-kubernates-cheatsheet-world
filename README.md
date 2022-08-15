@@ -292,3 +292,10 @@ Another example.
 ## Why do I need to override the equals and hashCode methods in Java?
 
 https://stackoverflow.com/questions/2265503/why-do-i-need-to-override-the-equals-and-hashcode-methods-in-java#:~:text=contract%20for%20Object.-,hashCode()%2C%20which%20will%20prevent%20your%20class%20from%20functioning%20properly,HashMap%2C%20HashSet%2C%20and%20Hashtable.&text=By%20defining%20equals()%20and,keys%20in%20hash%2Dbased%20collections.
+
+## Which Java Collection should I use?
+https://stackoverflow.com/questions/21974361/which-java-collection-should-i-use
+http://www.javapractices.com/topic/TopicAction.do?Id=65
+
+## Different Collection implementations
+https://stackoverflow.com/questions/2889777/difference-between-hashmap-linkedhashmap-and-treemap
