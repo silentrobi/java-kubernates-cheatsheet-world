@@ -299,3 +299,5 @@ http://www.javapractices.com/topic/TopicAction.do?Id=65
 
 ## Different Collection implementations
 https://stackoverflow.com/questions/2889777/difference-between-hashmap-linkedhashmap-and-treemap
+https://www.geeksforgeeks.org/difference-and-similarities-between-hashset-linkedhashset-and-treeset-in-java/
+https://www.javatpoint.com/working-of-hashmap-in-java#:~:text=HashMap%20contains%20an%20array%20of,()%20and%20equals()%20method.
