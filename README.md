@@ -314,7 +314,7 @@ https://www.javatpoint.com/working-of-hashmap-in-java#:~:text=HashMap%20contains
 
 
 ## Hibernate and JPA
-
+https://www.objectdb.com/api/java/jpa/MapKeyColumn
 
 ## Transaction and Optimistic locking
 
