@@ -301,3 +301,32 @@ http://www.javapractices.com/topic/TopicAction.do?Id=65
 https://stackoverflow.com/questions/2889777/difference-between-hashmap-linkedhashmap-and-treemap
 https://www.geeksforgeeks.org/difference-and-similarities-between-hashset-linkedhashset-and-treeset-in-java/
 https://www.javatpoint.com/working-of-hashmap-in-java#:~:text=HashMap%20contains%20an%20array%20of,()%20and%20equals()%20method.
+
+## Java custom validator
+
+## Junit 5 and Mockito
+
+## Springboot maven moduler architecture and ArcUnit
+
+## Spring security
+
+## Managing migration using Liquibase 
+
+
+## Hibernate and JPA
+
+
+## Transaction and Optimistic locking
+
+## Transactional Event
+
+## Aspect Oriented Programming (AOP)
+
+## Managing Multiple Bean
+
+## Consume API
+
+## Java Reflection
+
+
+
