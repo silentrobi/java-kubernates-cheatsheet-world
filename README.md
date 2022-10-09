@@ -322,11 +322,11 @@ JPA is java specification and Hibernate is implementation of JPA.
 
 **3. Relations**:
 
-	- One-to-One: https://www.baeldung.com/jpa-one-to-one
+	1. One-to-One: https://www.baeldung.com/jpa-one-to-one
 
-	- One-to-Many: https://www.baeldung.com/hibernate-one-to-many
+	2. One-to-Many: https://www.baeldung.com/hibernate-one-to-many
 
-	- Many-to-Many: https://www.baeldung.com/jpa-many-to-many
+	3. Many-to-Many: https://www.baeldung.com/jpa-many-to-many
 
 **4. Naming strategy**: https://www.baeldung.com/spring-data-jpa-custom-naming
 
