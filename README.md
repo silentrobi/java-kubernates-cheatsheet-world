@@ -334,7 +334,7 @@ JPA is java specification and Hibernate is implementation of JPA.
 https://www.baeldung.com/hibernate-persisting-maps
 https://stackoverflow.com/questions/25439813/difference-between-mapkey-mapkeycolumn-and-mapkeyjoincolumn-in-jpa-and-hiber
 https://www.objectdb.com/api/java/jpa/MapKeyColumn
-
+http://static.odrotbohm.de/lectures/ddd-and-spring/ 
 
 ## Transaction and Optimistic locking
 
@@ -348,5 +348,5 @@ https://www.objectdb.com/api/java/jpa/MapKeyColumn
 
 ## Java Reflection
 
-
+## what is group, artifact, 
 
