@@ -55,7 +55,16 @@ changeLogFile=src/main/resources/db/changelog/changelog-master.xml
 
 - To update database: `mvn liquibase:update`
 - To rollback changes: `mvn liquibase:rollback -Dliquibase.rollbackTag=1.0` or `mvn liquibase:rollback -Dliquibase.rollbackCount=3` or `mvn liquibase:rollback "-Dliquibase.rollbackDate=Jun 03, 2017"`. [More](https://docs.liquibase.com/tools-integrations/maven/commands/maven-rollback.html)
-
+- To update from parent module - `mvn -pl <module name> liquibase:update`
 >Note: In powershell you have use double qoute to run `-Dliquibase` section. e.g. `mvn liquibase:rollback "-Dliquibase.rollbackTag=1.0"`.
-
+>
 ***>NOTE***: Make sure you run `mvn clean install` to generate target files correctly to perform liquibase operations specially If you are working with multi-module maven projects.
+**Maven Liquibase Commands:**
+https://docs.liquibase.com/tools-integrations/maven/commands/home.html 
+
+*To run a liquibase maven goal with multiple attributes, use sample example below:* 
+```
+mvn liquibase:generateChangeLog "-Dliquibase.outputChangeLogFile=src/main/resources/db/changelog/generate-tables.xml" "-Dliquibase.clearCheckSums=true"
+```
+
+
