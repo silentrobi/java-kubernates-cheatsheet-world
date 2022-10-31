@@ -19,6 +19,8 @@
  
 ## Liquibase and Database Migration
 Liquibase best practice: https://www.liquibase.org/get-started/best-practices 
+Turn off liquibase on spring boot application start: Add `spring.liquibase.enabled=false` to **application.properties** file.
+
 **1. Automatically Generate migration script**
 
 Use `JPA Buddy` IntelliJ plugin that conveniently generates changelog/migration files. However, you have to pay for advance feature.
