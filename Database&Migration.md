@@ -51,7 +51,7 @@ changeLogFile=src/main/resources/db/changelog/changelog-master.xml
 ```
 >**Note:** We don't need this properties for production and no need to worry to hide this credential, as migration file generally get created local/dev environment.
 
-**Commands:**
+**3. Commands:**
 
 - To update database: `mvn liquibase:update`
 - To rollback changes: `mvn liquibase:rollback -Dliquibase.rollbackTag=1.0` or `mvn liquibase:rollback -Dliquibase.rollbackCount=3` or `mvn liquibase:rollback "-Dliquibase.rollbackDate=Jun 03, 2017"`. [More](https://docs.liquibase.com/tools-integrations/maven/commands/maven-rollback.html)
@@ -60,7 +60,7 @@ changeLogFile=src/main/resources/db/changelog/changelog-master.xml
 >
 ***>NOTE***: Make sure you run `mvn clean install` to generate target files correctly to perform liquibase operations specially If you are working with multi-module maven projects.
 
-**Maven Liquibase Commands:**
+**4. Maven Liquibase Commands:**
 
 https://docs.liquibase.com/tools-integrations/maven/commands/home.html 
 
