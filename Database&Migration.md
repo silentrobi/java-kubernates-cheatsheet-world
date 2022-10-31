@@ -17,3 +17,41 @@
     -  https://www.baeldung.com/spring-data-entitymanager
  
  
+## Liquibase and Database Migration
+Liquibase best practice: https://www.liquibase.org/get-started/best-practices 
+**1. Automatically Generate migration script**
+
+Use `JPA Buddy` IntelliJ plugin that conveniently generates changelog/migration files. However, you have to pay for advance feature.
+
+**2. Update/Rollback database**
+
+Add **`liquibase-maven-plugin`** plugin in `pom.xml`.
+
+The **`liquibase-maven-plugin`** plugin reads `liquibase.properties` file which contains database and changelog settings to update/rollback database. 
+
+liquibase.properties file:
+```
+url=jdbc:postgresql://localhost:5432/bookstore
+username=root
+password=12345
+driver=org.postgresql.Driver
+changeLogFile=src/main/resources/db/changelog/changelog-master.xml
+```
+`liquibase-maven-plugin` file:
+```
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <configuration>
+                    <propertyFile>src/main/resources/liquibase.properties</propertyFile>
+                </configuration>
+            </plugin>
+```
+>**Note:** We don't need this properties for production and no need to worry to hide this credential, as migration file generally get created local/dev environment.
+
+**Commands:**
+
+- To update database: `mvn liquibase:update`
+- To rollback changes: `mvn liquibase:rollback -Dliquibase.rollbackTag=1.0` or `mvn liquibase:rollback -Dliquibase.rollbackCount=3` or `mvn liquibase:rollback "-Dliquibase.rollbackDate=Jun 03, 2017"`. [More](https://docs.liquibase.com/tools-integrations/maven/commands/maven-rollback.html)
+
+>Note: In powershell you have use double qoute to run `-Dliquibase` section. e.g. `mvn liquibase:rollback "-Dliquibase.rollbackTag=1.0"`.
