@@ -19,13 +19,37 @@
  
 ## Liquibase and Database Migration
 Liquibase best practice: https://www.liquibase.org/get-started/best-practices 
-Turn off liquibase on spring boot application start: Add `spring.liquibase.enabled=false` to **application.properties** file.
+
+Turn off liquibase on spring boot application start: Add `spring.liquibase.enabled=false` to **_application.properties_** file.
+
+**Prerequisite**
+
+Create **_liquibase.properties_** file under **_resources_** directory and add following plugin.
+
+liquibase.properties file:
+```
+url=jdbc:postgresql://localhost:5432/bookstore
+username=root
+password=12345
+driver=org.postgresql.Driver
+changeLogFile=src/main/resources/db/changelog/changelog-master.xml
+```
+`liquibase-maven-plugin` file:
+```
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <configuration>
+                    <propertyFile>src/main/resources/liquibase.properties</propertyFile>
+                </configuration>
+            </plugin>
+```
 
 **1. Automatically Generate migration script**
 
 **1.1 Liquibase with Hibernate**
 
-- Use *liquibase-hibernate* plugin for generating changelog from JPA entities.
+- Use liquibase hibernate plugin for generating changelog from JPA entities.
 - Requires compatible dependencies in the plugin:
 ```xml
             <plugin>
@@ -55,18 +79,18 @@ Turn off liquibase on spring boot application start: Add `spring.liquibase.enabl
                 </dependencies>
             </plugin>
 ```
->**Note:** For hibernate 4, 5 and 6 use _liquibase-hibernate4_, _liquibase-hibernate5_ and _liquibase-hibernate6_ respectively.
-- Add following additional properties in **liquibase.properties** file.
+>**Note:** For hibernate 4, 5 and 6 use `liquibase-hibernate4`, `liquibase-hibernate5` and `liquibase-hibernate6` respectively.
+- Add following additional properties in **_liquibase.properties_** file.
 ```
 diffChangeLogFile=src/main/resources/db/changelog/liquibase-diff-changeLog.xml
 referenceDriver=liquibase.ext.hibernate.database.connection.HibernateDriver
 referenceUrl=hibernate:spring:org.example.domain?dialect=org.hibernate.dialect.PostgreSQLDialect
-```
+``` 
+- Rename **_liquibase-diff-changeLog.xml_** migration file and give it a unique name (e.g. change-log-123.xml). Finally, check the changelog and update the database.
+
 **2. Update/Rollback database**
 
-Add **`liquibase-maven-plugin`** plugin in `pom.xml`.
-
-The **`liquibase-maven-plugin`** plugin reads `liquibase.properties` file which contains database and changelog settings to update/rollback database. 
+- Add `liquibase-maven-plugin` plugin in `pom.xml`. The `liquibase-maven-plugin` plugin reads **_liquibase.properties_** file which contains database and changelog settings to update/rollback database. 
 
 liquibase.properties file:
 ```
