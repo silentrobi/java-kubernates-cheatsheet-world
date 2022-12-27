@@ -23,8 +23,45 @@ Turn off liquibase on spring boot application start: Add `spring.liquibase.enabl
 
 **1. Automatically Generate migration script**
 
-Use `JPA Buddy` IntelliJ plugin that conveniently generates changelog/migration files. However, you have to pay for advance feature.
+**1.1 Liquibase with Hibernate**
 
+- Use *liquibase-hibernate* plugin for generating changelog from JPA entities.
+- Requires compatible dependencies in the plugin:
+```xml
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>4.18.0</version>
+                <configuration>
+                    <propertyFile>src/main/resources/liquibase.properties</propertyFile>
+                    <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.liquibase.ext</groupId>
+                        <artifactId>liquibase-hibernate5</artifactId>
+                        <version>4.17.2</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-beans</artifactId>
+                        <version>5.3.23</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.springframework.data</groupId>
+                        <artifactId>spring-data-jpa</artifactId>
+                        <version>2.7.3</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+```
+>**Note:** For hibernate 4, 5 and 6 use _liquibase-hibernate4_, _liquibase-hibernate5_ and _liquibase-hibernate6_ respectively.
+- Add following additional properties in **liquibase.properties** file.
+```
+diffChangeLogFile=src/main/resources/db/changelog/liquibase-diff-changeLog.xml
+referenceDriver=liquibase.ext.hibernate.database.connection.HibernateDriver
+referenceUrl=hibernate:spring:org.example.domain?dialect=org.hibernate.dialect.PostgreSQLDialect
+```
 **2. Update/Rollback database**
 
 Add **`liquibase-maven-plugin`** plugin in `pom.xml`.
@@ -56,6 +93,7 @@ changeLogFile=src/main/resources/db/changelog/changelog-master.xml
 - To update database: `mvn liquibase:update`
 - To rollback changes: `mvn liquibase:rollback -Dliquibase.rollbackTag=1.0` or `mvn liquibase:rollback -Dliquibase.rollbackCount=3` or `mvn liquibase:rollback "-Dliquibase.rollbackDate=Jun 03, 2017"`. [More](https://docs.liquibase.com/tools-integrations/maven/commands/maven-rollback.html)
 - To update from parent module: `mvn -pl <module name> liquibase:update`
+- To invalidate checksums:  `mvn liquibase:clearCheckSums`
 >Note: In powershell you have use double qoute to run `-Dliquibase` section. e.g. `mvn liquibase:rollback "-Dliquibase.rollbackTag=1.0"`.
 >
 ***>NOTE***: Make sure you run `mvn clean install` to generate target files correctly to perform liquibase operations specially If you are working with multi-module maven projects.
