@@ -93,6 +93,13 @@ public class SpringUsecasesApplication {
         System.out.println("Thread name: " + currentThread.getName() + " with id:" + currentThread.getId() + " is doing this task");
     }
 }
+
+Otherway to controll the thread pool:
+```java
+final var threadPool = Executors.newFixedThreadPool(2);
+      futures.add(CompletableFuture.supplyAsync(() -> blogClient.callSync(URL, new ParameterizedTypeReference<>(){}), threadPool));
+}
+```
 ```
 **Sample Output**
 
