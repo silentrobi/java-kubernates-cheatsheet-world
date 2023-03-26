@@ -5,6 +5,9 @@ https://spring.io/guides/topicals/spring-boot-docker/
 
 https://www.youtube.com/watch?v=hmpUegtHG9s&ab_channel=SchoolofDevops
 
+**Docker best practice**
+https://www.youtube.com/watch?v=8vXoMqWgbQQ&ab_channel=TechWorldwithNana
+
 ```dockerfile
 ##-----------build stage--------------
 FROM amazoncorretto:17-alpine-jdk as builder
