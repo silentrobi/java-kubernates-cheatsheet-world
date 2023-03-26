@@ -73,10 +73,8 @@ EXPOSE 8080
 # Bootstrap the java application.
 ENTRYPOINT ["/app/run.sh"]
 ```
-
+Let's see how it looks like inside container.
 ```sh
-find . | sed -e "s/[^-][^\/]*\// |/g" -e "s/|\([^ ]\)/|-\1/"
-
 /app # find . | sed -e "s/[^-][^\/]*\// |/g" -e "s/|\([^ ]\)/|-\1/"
 .
  |-run.sh
