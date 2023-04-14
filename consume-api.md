@@ -100,7 +100,6 @@ final var threadPool = Executors.newFixedThreadPool(2);
       futures.add(CompletableFuture.supplyAsync(() -> blogClient.callSync(URL, new ParameterizedTypeReference<>(){}), threadPool));
 }
 ```
-```
 **Sample Output**
 
 ```
