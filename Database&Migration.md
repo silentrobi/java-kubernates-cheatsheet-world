@@ -10,7 +10,7 @@
 - **Optimistic vs. Pessimistic Locking**: https://vladmihalcea.com/optimistic-vs-pessimistic-locking/
 - **Optimistic locking with JPA and Hibernate**: https://vladmihalcea.com/optimistic-locking-version-property-jpa-hibernate/
 - **Eiger/Lazy loading**: https://www.baeldung.com/hibernate-lazy-eager-loading 
-
+- **Bulk/batch update**: https://howtodoinjava.com/hibernate/batch-processing/
 ## Repositories
 - **Custom Repository**: 
     -  https://vladmihalcea.com/custom-spring-data-repository/
