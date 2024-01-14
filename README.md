@@ -288,7 +288,9 @@ Another example.
         integerList.forEach(i -> System.out.println(i)); // Here lambda function is the implementation of accept method of Consumer Interface.
     }
 ```
-
+## Built-In lambda function
+https://javatechonline.com/predefined-functional-interfaces/
+https://mkyong.com/java8/java-8-consumer-examples/
 ## Why do I need to override the equals and hashCode methods in Java?
 
 https://stackoverflow.com/questions/2265503/why-do-i-need-to-override-the-equals-and-hashcode-methods-in-java
