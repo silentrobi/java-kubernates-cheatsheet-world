@@ -120,3 +120,10 @@ If you’re using Spring Boot, it doesn’t need Tomcat installed, but you can s
 
 
 ![image](https://github.com/user-attachments/assets/5833fcd1-4f2e-485b-b42f-b65d39f93db5)
+
+# Spring MVC (DispatcherServlet)
+Follow the project example that gives you basic understanding how spring works with servlet!
+https://www.youtube.com/watch?v=g2b-NbR48Jo&t=1257s
+![image](https://github.com/user-attachments/assets/02f818d2-e5dd-4bec-88b2-d8ef6913e822)
+
+
